@@ -34,6 +34,14 @@ __pycache__/
 venv/
 env/
 
+# 会话状态文件（运行时生成，不提交）
+.ai/session-state.json
+.ai/user-profile.json
+.ai/work-history.json
+
+# 样本库索引（运行时更新，不提交）
+samples/index.json
+
 # 其他
 *.bak
 *.orig
