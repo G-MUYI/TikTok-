@@ -1,0 +1,22 @@
+{
+  "version": "1.0.0",
+  "last_updated": "2026-03-04T14:35:32Z",
+  "current_session": {
+    "session_id": null,
+    "started_at": null,
+    "last_activity": null,
+    "active_skill": null,
+    "current_phase": null
+  },
+  "context": {
+    "last_analyzed_copy": null,
+    "generated_variants": [],
+    "pending_translation": false,
+    "user_feedback": []
+  },
+  "notes": [
+    "此文件由AI自动维护，记录当前会话状态",
+    "每次执行Skills时会更新此文件",
+    "新开窗口时AI会读取此文件恢复上下文"
+  ]
+}

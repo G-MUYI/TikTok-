@@ -1,0 +1,117 @@
+# Skills 全局配置文件
+# 版本: 1.0.0
+# 更新日期: 2026-03-04
+
+# ============================================
+# 系统配置
+# ============================================
+system:
+  # Shell配置（Windows环境）
+  shell: git-bash  # 强制使用Git Bash，禁用PowerShell
+  encoding: utf-8
+
+  # 路径处理规则
+  path_rules:
+    use_forward_slash: true      # 使用正斜杠 /
+    quote_paths: true            # 路径用双引号包裹
+    support_chinese: true        # 支持中文路径和文件名
+
+  # 文件命名规则
+  naming:
+    allow_chinese: true          # 允许中文文件名
+    timestamp_format: "YYYYMMDD-HHMMSS"
+
+# ============================================
+# Skills 配置
+# ============================================
+skills:
+  # 爆款文案生成器
+  viral-copywriter:
+    # 基础配置
+    enabled: true
+    version: "1.1.0"
+
+    # 中文指令别名
+    aliases:
+      - "/爆款文案"
+      - "/文案生成"
+      - "/vc"
+
+    # 默认参数
+    defaults:
+      variant_count: 3           # 默认生成3个变体
+      auto_translate: false      # 不自动翻译（询问用户）
+      auto_save: true            # 自动保存到样本库
+      languages: [zh, en, es, ja]  # 支持的语言
+      style: friendly            # 默认风格：friendly/professional/casual
+
+    # 内容质量控制
+    quality:
+      compliance_level: strict   # 合规检查级别：strict/moderate/relaxed
+      min_length: 20             # 最小文案长度（字符）
+      max_length: 1000           # 最大文案长度（字符）
+
+    # 样本库配置
+    sample_library:
+      auto_save: true
+      privacy_mode: true         # 自动替换品牌名为占位符
+      deduplication: true        # 去重检查
+
+  # 项目初始化工具
+  dev-workflow-init:
+    enabled: true
+    version: "1.0.0"
+    aliases:
+      - "/初始化"
+      - "/启动项目"
+      - "/init"
+
+# ============================================
+# 用户偏好设置
+# ============================================
+user:
+  # 语言偏好
+  language: zh                   # 界面语言：zh/en
+
+  # 风格偏好
+  preferred_style: friendly      # 偏好的文案风格
+
+  # 避免使用的词汇
+  avoid_words:
+    - "限时抢购"
+    - "错过后悔"
+    - "史上最低"
+    - "最好"
+    - "第一"
+
+  # 喜欢的文案模式
+  favorite_patterns:
+    - "好奇心驱动"
+    - "故事叙述"
+    - "用户见证"
+
+  # 反馈设置
+  feedback:
+    collect_after_generation: true  # 生成后收集反馈
+    auto_optimize: true             # 根据反馈自动优化
+
+# ============================================
+# 高级功能
+# ============================================
+advanced:
+  # 缓存配置
+  cache:
+    enabled: true
+    ttl: 604800                  # 缓存有效期（秒），7天
+    similarity_threshold: 0.8    # 相似度阈值
+
+  # 性能优化
+  performance:
+    batch_processing: true       # 支持批量处理
+    parallel_translation: false  # 串行翻译（更稳定）
+
+  # 学习机制
+  learning:
+    enabled: true
+    optimization_interval: 10    # 每10次使用后优化一次
+    save_feedback: true          # 保存用户反馈

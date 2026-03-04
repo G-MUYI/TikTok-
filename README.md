@@ -10,34 +10,105 @@
 短视频带货爆款文案工作流/
 ├── AGENTS.md                           # 统一规则源（所有 AI 遵循的规范）
 ├── README.md                           # 本文件：项目总览
-├── .ai/skills/                         # 项目初始化工具
-│   └── dev-workflow-init/              # 工作流初始化 skill
+├── .ai/                                # AI配置目录
+│   ├── config.yaml                     # 全局配置文件
+│   ├── SKILLS_INDEX.md                 # Skills索引和帮助
+│   ├── session-state.json              # 会话状态（自动生成）
+│   ├── user-profile.json               # 用户偏好（自动生成）
+│   └── skills/                         # 项目初始化工具
+│       └── dev-workflow-init/          # 工作流初始化 skill
 ├── viral-copywriter/                   # 爆款文案生成 skill（独立包）⭐
 │   ├── SKILL.md                        # Skill 核心定义
 │   ├── README.md                       # 使用指南
-│   ├── templates/                      # 文案模板
-│   └── references/                     # 参考资料
+│   ├── INSTALL.md                      # 安装说明
+│   └── templates/                      # 执行模板 ⭐
+│       ├── analysis-output.md          # 分析输出模板
+│       ├── variant-output.md           # 变体生成模板
+│       ├── translation-output.md       # 翻译输出模板
+│       └── sample-save.md              # 样本保存模板
 ├── samples/                            # 爆款文案样本库 📚
 │   ├── index.json                      # 样本索引
 │   ├── template.md                     # 样本格式模板
 │   ├── README.md                       # 样本库管理指南
 │   └── cases/                          # 具体案例（自动生成）
-└── output/                             # 生成的文案输出 📝
+├── output/                             # 生成的文案输出 📝
+├── tests/                              # 测试文件
+│   ├── README.md                       # 测试指南
+│   └── fixtures/                       # 测试文案
+└── docs/                               # 归档文档 📚
+    ├── README.md                       # 文档索引
+    ├── CHANGELOG.md                    # 完整更新日志
+    ├── OPTIMIZATION_SUMMARY.md         # 优化总结
+    ├── SESSION_PERSISTENCE.md          # 会话持久化详细说明
+    └── SESSION_PERSISTENCE_TEST.md     # 会话持久化测试
 ```
 
 ## 🚀 快速开始
 
-### 1. 直接使用
-在 AI 对话框中直接粘贴你的爆款文案，系统会自动：
+### 1. 使用中文指令
+```
+/爆款文案
+[粘贴你的爆款文案]
+```
+
+系统会自动：
 1. 深度分析文案（结构/情绪/心理学原理）
 2. 保存分析洞察到样本库
 3. 生成 3-5 个自然亲切的变体
-4. 提供多语言翻译（中/英/西/日）
+4. 询问是否需要多语言翻译（中/英/西/日）
 
-### 2. 查看文档
-- **使用指南**：[viral-copywriter/README.md](viral-copywriter/README.md)
-- **样本库管理**：[samples/README.md](samples/README.md)
-- **项目规范**：[AGENTS.md](AGENTS.md)
+### 2. 快捷模式
+```
+/爆款文案 --快速              # 快速生成，跳过详细分析
+/爆款文案 --仅分析            # 只分析不生成变体
+/爆款文案 --变体数量=5        # 生成5个变体
+/爆款文案 --风格=专业         # 指定专业风格
+```
+
+### 3. 样本库管理 ⭐ 新增
+```
+/样本库                     # 查看样本库统计
+/样本库 列表                # 列出所有样本
+/样本库 搜索 [关键词]       # 搜索样本
+/样本库 分类 [类别]         # 按类别查看
+/样本库 导出                # 导出样本库报告
+```
+
+### 4. 会话管理
+```
+/恢复会话                   # 恢复上次未完成的工作
+/查看历史                   # 查看最近的工作历史
+/清空状态                   # 清空当前会话状态
+```
+
+### 5. 查看帮助
+```
+/帮助                        # 显示帮助信息
+/技能列表                    # 查看所有可用功能
+/帮助 爆款文案               # 查看具体功能说明
+```
+
+### 6. 文档导航
+
+#### 📖 必读文档（新手入门）
+- [README.md](README.md) - 项目总览（本文件）
+- [viral-copywriter/README.md](viral-copywriter/README.md) - 使用指南（详细的FAQ和示例）
+
+#### 🔧 技术文档（开发者）
+- [AGENTS.md](AGENTS.md) - AI规则源（所有AI遵循的规范）
+- [viral-copywriter/SKILL.md](viral-copywriter/SKILL.md) - Skill定义（技术细节）
+- [.ai/config.yaml](.ai/config.yaml) - 全局配置文件
+
+#### 📚 参考文档（可选）
+- [.ai/SKILLS_INDEX.md](.ai/SKILLS_INDEX.md) - Skills索引和帮助
+- [samples/README.md](samples/README.md) - 样本库管理指南
+- [tests/README.md](tests/README.md) - 测试指南
+
+#### 📝 归档文档（docs/）
+- [docs/CHANGELOG.md](docs/CHANGELOG.md) - 完整更新日志
+- [docs/OPTIMIZATION_SUMMARY.md](docs/OPTIMIZATION_SUMMARY.md) - 优化总结
+- [docs/SESSION_PERSISTENCE.md](docs/SESSION_PERSISTENCE.md) - 会话持久化详细说明
+- [docs/SESSION_PERSISTENCE_TEST.md](docs/SESSION_PERSISTENCE_TEST.md) - 会话持久化测试
 
 ## ✨ 核心特性
 
@@ -64,6 +135,24 @@
 - 提取可复用的模式和技巧
 - 随着样本增多，生成质量越来越高
 - 学习你的偏好和风格
+
+### 5. 反馈收集机制 ⭐ 新增
+- 生成变体后主动询问用户偏好
+- 记录用户喜欢的风格和避免的词汇
+- 根据反馈自动优化生成策略
+- 持续改进，越用越好用
+
+### 6. 样本库管理 ⭐ 新增
+- 查看样本库统计信息
+- 搜索和筛选样本
+- 按类别管理样本
+- 导出样本库分析报告
+
+### 7. 会话持久化
+- 自动保存工作状态
+- 关闭窗口后可恢复
+- 记住用户偏好
+- 智能恢复未完成的工作
 
 ## 📊 工作流程
 
@@ -145,8 +234,11 @@ AI：[针对性生成口语化变体]
 
 - ✅ **Phase 1**：样本库初始化（已完成）
 - ✅ **Phase 2**：Skill 核心开发（已完成）
-- ⏳ **Phase 3**：测试与优化（进行中）
-- 🔜 **Phase 4**：样本库扩充（持续进行）
+- ✅ **Phase 3**：执行模板系统（v1.3.0 已完成）⭐
+- ✅ **Phase 4**：反馈收集机制（v1.3.0 已完成）⭐
+- ✅ **Phase 5**：样本库管理功能（v1.3.0 已完成）⭐
+- ⏳ **Phase 6**：测试与优化（进行中）
+- 🔜 **Phase 7**：样本库扩充（持续进行）
 
 ## 🎯 下一步
 
@@ -187,10 +279,19 @@ AI：[针对性生成口语化变体]
 
 ## 📝 版本信息
 
-- **版本**：v1.0.0
-- **创建日期**：2026-03-04
+- **版本**：v1.3.0
+- **更新日期**：2026-03-04
 - **作者**：YY
 - **兼容性**：Claude Code、Kiro、Cursor
+
+### 最新更新（v1.3.0）
+- ✨ 新增执行模板系统（4个标准模板）
+- ✨ 新增反馈收集机制
+- ✨ 新增样本库管理功能（5个管理指令）
+- 📚 大幅扩展文档（README、FAQ、测试用例）
+- 🔧 优化用户体验和一致性
+
+查看完整更新日志：[docs/CHANGELOG.md](docs/CHANGELOG.md)
 
 ---
 

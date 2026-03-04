@@ -1,0 +1,27 @@
+{
+  "version": "1.0.0",
+  "last_updated": "2026-03-04T14:35:32Z",
+
+  "recent_sessions": [],
+
+  "recent_analyses": [],
+
+  "quick_access": {
+    "last_5_copies": [],
+    "last_5_variants": [],
+    "last_5_outputs": []
+  },
+
+  "statistics": {
+    "total_sessions": 0,
+    "total_time_spent": 0,
+    "most_productive_time": null,
+    "favorite_features": []
+  },
+
+  "notes": [
+    "此文件记录工作历史，用于快速恢复和统计",
+    "保留最近的工作记录，方便用户查看和恢复",
+    "AI可以根据历史数据提供更好的建议"
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "version": "1.0.0",
+  "created_at": "2026-03-04T14:35:32Z",
+  "last_updated": "2026-03-04T14:35:32Z",
+
+  "preferences": {
+    "language": "zh",
+    "default_variant_count": 3,
+    "default_style": "friendly",
+    "auto_translate": false,
+    "auto_save_samples": true
+  },
+
+  "style_preferences": {
+    "favorite_patterns": [
+      "好奇心驱动",
+      "故事叙述",
+      "用户见证"
+    ],
+    "avoid_words": [
+      "限时抢购",
+      "错过后悔",
+      "史上最低",
+      "最好",
+      "第一"
+    ],
+    "preferred_tone": "自然亲切"
+  },
+
+  "usage_stats": {
+    "total_analyses": 0,
+    "total_variants_generated": 0,
+    "favorite_variant_types": {},
+    "most_used_parameters": {}
+  },
+
+  "learning_data": {
+    "liked_variants": [],
+    "disliked_patterns": [],
+    "custom_rules": []
+  },
+
+  "notes": [
+    "此文件保存用户的偏好设置和学习数据",
+    "AI会根据此文件调整生成策略",
+    "用户可以手动编辑此文件来自定义偏好"
+  ]
+}
