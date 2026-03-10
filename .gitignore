@@ -39,8 +39,8 @@ env/
 .ai/user-profile.json
 .ai/work-history.json
 
-# 样本库索引（运行时更新，不提交）
-samples/index.json
+# 样本库索引（运行时更新，但需要提交以保存学习成果）
+# samples/index.json
 
 # 其他
 *.bak
