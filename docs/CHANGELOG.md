@@ -1,5 +1,36 @@
 # 更新日志 (CHANGELOG)
 
+## [1.5.0] - 2026-03-22
+
+### 优化 - 文档去重与数据一致性
+
+#### 文档精简
+- **AGENTS.md** 从 303 行精简到 ~120 行，聚焦纯规则/约束
+- **SKILL.md** 从 581 行精简到 ~200 行，作为唯一 Skill 执行定义，内含速查卡片
+- **README.md** 从 331 行精简到 ~60 行，聚焦项目入门
+- **SKILLS_INDEX.md** 从 255 行精简到 ~30 行，纯索引
+- **viral-copywriter/README.md** 从 304 行精简到 ~80 行，安装+FAQ
+- **sample-save.md** 从 150 行精简到 ~45 行，匹配实际样本格式
+- 删除 `docs/QUICK_REFERENCE.md`（已合并到 SKILL.md 速查卡片）
+- 删除 `docs/SESSION_PERSISTENCE.md` 和 `SESSION_PERSISTENCE_TEST.md`
+
+#### 数据一致性修复
+- 重建 `samples/index.json`：移除 8 条不存在的样本记录，补充 3 条缺失记录
+- `total_samples` 从错误的 13 修正为实际文件数 9
+- 修正 `user-profile.json` 的 `total_analyses` 统计
+
+#### 状态管理简化
+- 删除无效的 `session-state.json` 和 `work-history.json`
+- 移除所有文档中的"会话持久化"和"恢复会话"相关内容
+- 保留 `user-profile.json`（用户偏好有实际价值）
+
+#### 规范化
+- 所有文件版本号统一为 v1.5.0
+- 明确输出目录命名规范：`YYYYMMDD-英文产品名/`
+- 建立文档职责分工：AGENTS.md=规则 / SKILL.md=执行 / README.md=入门
+
+---
+
 ## [1.3.0] - 2026-03-04
 
 ### 新增功能 ✨

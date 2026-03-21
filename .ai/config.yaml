@@ -1,6 +1,6 @@
 # Skills 全局配置文件
-# 版本: 1.4.0
-# 更新日期: 2026-03-07
+# 版本: 1.5.0
+# 更新日期: 2026-03-22
 
 # ============================================
 # 系统配置
@@ -29,7 +29,7 @@ skills:
   viral-copywriter:
     # 基础配置
     enabled: true
-    version: "1.4.0"
+    version: "1.5.0"
 
     # 中文指令别名
     aliases:
@@ -39,11 +39,12 @@ skills:
 
     # 默认参数
     defaults:
-      variant_count: 3           # 默认生成3个变体
-      auto_translate: false      # 不自动翻译（询问用户）
+      variant_count: 3           # 默认输出3个版本（含复刻版/推荐版）
+      auto_translate: true       # 默认自动翻译（仅推荐版/复刻版；如需跳过用 --跳过翻译）
       auto_save: true            # 自动保存到样本库
       languages: [zh, en, es, ja]  # 支持的语言
       style: friendly            # 默认风格：friendly/professional/casual
+      japanese_tone: neutral     # 日语口吻：neutral（默认中性）/feminine/masculine
 
     # 内容质量控制
     quality:

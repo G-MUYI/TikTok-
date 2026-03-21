@@ -15,8 +15,8 @@ samples/
 ├── index.json          # 样本索引（自动维护）
 ├── template.md         # 样本格式模板
 └── cases/              # 具体案例
-    ├── 001-xxx.md
-    ├── 002-xxx.md
+    ├── sample-006-xxx.md
+    ├── sample-009-xxx.md
     └── ...
 ```
 
@@ -25,22 +25,19 @@ samples/
 ```json
 {
   "version": "1.0.0",
-  "last_updated": "2026-03-04",
-  "total_samples": 3,
+  "last_updated": "2026-03-22",
+  "total_samples": 9,
   "samples": [
     {
-      "id": "001",
-      "title": "护肤品种草文案",
-      "file": "cases/001-skincare-viral.md",
-      "tags": ["护肤", "好奇心驱动", "社会认同"],
-      "product_type": "美妆护肤",
-      "emotion": "兴奋",
-      "added_date": "2026-03-04",
-      "performance": {
-        "likes": 50000,
-        "comments": 1200,
-        "shares": 800
-      }
+      "id": "sample-016",
+      "category": "厨房日用",
+      "product": "防溅水龙头净水器",
+      "date": "2026-03-20",
+      "source": "用户提供",
+      "tags": ["厨房日用", "水龙头", "净水器", "防溅"],
+      "emotion_score": 6,
+      "key_patterns": ["价值预判前置", "痛点切入", "首尾呼应"],
+      "summary": "一句话摘要"
     }
   ]
 }
@@ -79,6 +76,21 @@ AI 会从样本库中学习：
 
 ## 手动管理
 
+### 索引自检 / 重建（推荐）
+
+为了避免 `samples/index.json` 与 `samples/cases/` 长期使用后出现漂移，可以使用项目自带脚本进行一致性检查与同步：
+
+```bash
+# 只检查，不写文件
+py -3 tools/sample_index.py check
+
+# 预览将要修改的内容（不写文件）
+py -3 tools/sample_index.py fix --dry-run
+
+# 同步修复（会增删 index 条目，使其与 cases/ 目录一致）
+py -3 tools/sample_index.py fix
+```
+
 ### 查看所有样本
 ```bash
 cat samples/index.json
@@ -86,7 +98,7 @@ cat samples/index.json
 
 ### 查看特定样本
 ```bash
-cat samples/cases/001-xxx.md
+cat samples/cases/sample-016-xxx.md
 ```
 
 ### 搜索样本

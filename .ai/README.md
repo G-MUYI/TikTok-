@@ -39,17 +39,17 @@
 
 ## 工作原理
 
-- 所有 skill 文件实际存储在 `.ai/skills/` 目录中
-- 各个 AI IDE 的 skills 目录（如 `.claude/skills/`、`.kiro/skills/` 等）通过符号链接指向这里
-- 这样只需维护一份文件，所有 IDE 都能访问
+- 本项目的 Skill 分两类：
+  - **项目主 Skill**：`viral-copywriter/`（位于项目根目录，便于拷贝/分发）
+  - **通用/辅助 Skill**：`.ai/skills/`（例如 `dev-workflow-init/`）
+- 使用时，把需要的 skill 文件夹复制/链接到你的 AI IDE 对应的 skills 目录即可。
 
 ## 支持的 IDE
 
-- Claude Code (`.claude/skills/` → `.ai/skills/`)
-- Kiro (`.kiro/skills/` → `.ai/skills/`)
-- Cursor (`.cursor/skills/` → `.ai/skills/`)
-- VSCode (`.vscode/skills/` → `.ai/skills/`)
-- Windsurf (`.windsurf/skills/` → `.ai/skills/`)
+- Claude Code（`~/.claude/skills/`）
+- Kiro（`~/.kiro/skills/`）
+- Cursor（以 Cursor 的 skills 目录为准）
+- VSCode / Windsurf（以各自的 skills 目录为准）
 
 ## 配置文件
 
@@ -63,7 +63,9 @@
 
 ## 添加新 Skill
 
-将新的 skill 文件夹放入 `.ai/skills/` 目录即可，所有 IDE 会自动识别。
+推荐约定：
+- 项目专用 skill（例如爆款文案）放在项目根目录（便于复制给其他项目）
+- 可复用的通用 skill 放在 `.ai/skills/`（便于集中管理）
 
 ## 重要提示
 
