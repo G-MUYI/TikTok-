@@ -33,6 +33,7 @@ __pycache__/
 .Python
 venv/
 env/
+.pytest_cache/
 
 # 用户偏好文件（运行时生成，不提交）
 .ai/user-profile.json

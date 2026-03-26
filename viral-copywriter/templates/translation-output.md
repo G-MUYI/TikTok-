@@ -83,7 +83,7 @@
 保存后的文件结构：
 ```
 output/
-└── YYYYMMDD-english-product/
+└── YYYYMMDD-产品名/
     ├── zh-CN.md      # 中文版本
     ├── en-US.md      # 英文版本
     ├── es-ES.md      # 西班牙语版本
